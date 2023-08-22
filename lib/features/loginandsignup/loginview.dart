@@ -40,7 +40,7 @@ class _LoginViewState extends State<LoginView> {
                     style: Theme.of(context).textTheme.labelLarge,
                   )),
                   SizedBox(height: 60.h),
-                  const LoginFormView(),
+                  LoginFormView(),
                   SizedBox(height: 20.h),
                 ],
               ),

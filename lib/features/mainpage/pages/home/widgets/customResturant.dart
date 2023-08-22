@@ -42,7 +42,7 @@ class CustomResturantView extends StatelessWidget {
               height: 4.h,
             ),
             Text(
-              resturantmint,
+              '$resturantmint Mins',
               style: Theme.of(context).textTheme.titleSmall,
             ),
           ],

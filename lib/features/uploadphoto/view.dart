@@ -9,8 +9,8 @@ import 'package:image_picker/image_picker.dart';
 import '../../core/design/customcolumn/view.dart';
 
 class UploaPhotoView extends StatefulWidget {
-  const UploaPhotoView({super.key});
-
+  const UploaPhotoView({super.key, required this.accesstoken});
+  final String accesstoken;
   @override
   State<UploaPhotoView> createState() => _UploaPhotoViewState();
 }

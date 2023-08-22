@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_ninja/core/global/theme/lightmodetheme.dart';
+import 'package:food_ninja/features/loginandsignup/signupview.dart';
 
-import 'features/productdetailes/view.dart';
+import 'core/global/theme/lightmodetheme.dart';
 
 void main() => runApp(const MyApp());
 
@@ -22,10 +22,11 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'FoodNinja',
           theme: getLightTheme(),
+          darkTheme: ThemeData.dark(),
           home: child,
         );
       },
-      child: const ProductDetailsView(),
+      child: const SignUpView(),
     );
   }
 }

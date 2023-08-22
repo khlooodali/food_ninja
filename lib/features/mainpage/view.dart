@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:food_ninja/features/mainpage/pages/Buy/view.dart';
+
 import 'package:food_ninja/features/mainpage/pages/chat/view.dart';
 import 'package:food_ninja/features/mainpage/pages/home/view.dart';
+import 'package:food_ninja/features/mainpage/pages/orderdetailes/view.dart';
 import 'package:food_ninja/features/mainpage/pages/profile/view.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class MainPageView extends StatefulWidget {
-  const MainPageView({super.key});
-
+  const MainPageView({super.key, required this.accesstoken});
+  final String accesstoken;
   @override
   State<MainPageView> createState() => _MainPageViewState();
 }
@@ -17,7 +18,7 @@ class _MainPageViewState extends State<MainPageView> {
   List<Widget> pageslist = [
     HomeView(),
     const ProfileView(),
-    const ByeView(),
+    const OrderDetailesView(),
     const ChatView(),
   ];
 

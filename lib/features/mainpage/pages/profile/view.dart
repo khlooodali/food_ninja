@@ -36,12 +36,14 @@ class ProfileView extends StatelessWidget {
                             topRight: Radius.circular(40),
                             topLeft: Radius.circular(40)),
                       ),
-                      child: Column(
+                      child: ListView(
+                        controller: scrollcontroller,
                         children: [
                           const PersonalInfo(),
                           Expanded(
                             child: ListView.builder(
-                              controller: scrollcontroller,
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
                               itemCount: 10,
                               itemBuilder: (BuildContext context, int index) {
                                 return const CustomFavoriteItem(

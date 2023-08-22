@@ -3,6 +3,7 @@ import 'package:food_ninja/core/global/appcolors/appcolorslightmode.dart';
 
 ThemeData getLightTheme() {
   return ThemeData(
+    brightness: Brightness.light,
     primaryColor: AppLightColor.lightprimaryColor,
     canvasColor: AppLightColor.foodcontainerColor,
 

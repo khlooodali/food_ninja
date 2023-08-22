@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/design/customcolumn/view.dart';
+//import '../loginandsignup/model.dart';
+import '../loginandsignup/model.dart';
 import 'widgets/form.dart';
 
 class SignUpProcess extends StatelessWidget {
-  const SignUpProcess({super.key});
-
+  const SignUpProcess({
+    super.key,
+    required this.user,
+  });
+  final User user;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -25,7 +30,9 @@ class SignUpProcess extends StatelessWidget {
                 SizedBox(
                   height: 20.h,
                 ),
-                const SignProcessFormView(),
+                SignProcessFormView(
+                  user: user,
+                ),
               ],
             ),
           ],
