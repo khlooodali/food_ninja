@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:food_ninja/core/logic/helpermethode/nextpage.dart';
 
+import '../../../core/logic/helpermethode/nextpage.dart';
 import '../../mainpage/view.dart';
 import '../../uploadphoto/view.dart';
 import 'login_state.dart';
@@ -72,6 +72,7 @@ class ApiClientCubit extends Cubit<ApiClientStates> {
       emit(SuccessState());
 
       if (response.data["status"] == true) {
+        print(response.data);
         nextTo(
             context,
             UploaPhotoView(
@@ -79,13 +80,12 @@ class ApiClientCubit extends Cubit<ApiClientStates> {
             ),
             iskeep: false);
       } else {
+        final error = ErrorResponse.fromJson(response.data);
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
             backgroundColor: Colors.red,
             duration: const Duration(seconds: 3),
-            content: Text(response.data["massege"]["email"][0])));
+            content: Text(error.massege.email[0])));
       }
-
-      print(response.data);
 
       return response;
     } catch (e) {
@@ -94,5 +94,23 @@ class ApiClientCubit extends Cubit<ApiClientStates> {
       const SnackBar(
           duration: Duration(seconds: 3), content: Text('failde connection'));
     }
+  }
+}
+
+class ErrorResponse {
+  late final bool status;
+  late final Massege massege;
+
+  ErrorResponse.fromJson(Map<String, dynamic> json) {
+    status = json['status'];
+    massege = Massege.fromJson(json['massege']);
+  }
+}
+
+class Massege {
+  late final List<String> email;
+
+  Massege.fromJson(Map<String, dynamic> json) {
+    email = List.castFrom<dynamic, String>(json['email']);
   }
 }

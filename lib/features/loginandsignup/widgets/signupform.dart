@@ -7,7 +7,7 @@ import 'package:food_ninja/core/global/appcolors/appcolorslightmode.dart';
 import 'package:food_ninja/core/logic/helpermethode/nextpage.dart';
 import 'package:food_ninja/features/loginandsignup/cubit/apiclient.dart';
 import 'package:food_ninja/features/loginandsignup/model.dart';
-import 'package:food_ninja/features/signupprocess/view.dart';
+import 'package:food_ninja/features/loginandsignup/signupprocessview.dart';
 //import 'package:food_ninja/features/loginandsignup/model.dart';
 import 'package:roundcheckbox/roundcheckbox.dart';
 
@@ -151,7 +151,7 @@ class _SignUpFormState extends State<SignUpForm> {
                               _formKey.currentState!.save();
                               nextTo(
                                   context,
-                                  SignUpProcess(
+                                  SignUpProcessView(
                                       user: User(
                                           email: cubit.useremailController.text,
                                           name: cubit.usernameController.text,
