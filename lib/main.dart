@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_ninja/features/loginandsignup/loginview.dart';
 import 'package:food_ninja/features/loginandsignup/signupview.dart';
 
 import 'core/global/theme/lightmodetheme.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const SignUpView(),
+      child: const LoginView(),
     );
   }
 }
